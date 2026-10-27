@@ -33,8 +33,10 @@ export function normalize(source:string,r:RawRecord,now=new Date()):Omit<Announc
   const period=parsePeriod(k?`${str(r,'pbanc_rcpt_bgng_dt')} ~ ${str(r,'pbanc_rcpt_end_dt')}`:str(r,'reqstBeginEndDe'));
   let category:Category=field==='창업'?'startup':/소상공인/.test(str(r,'trgetNm'))?'small_business':/투자/.test(field)?'investment':/R&D|연구개발/.test(field)?'rnd':'business';
   if(k)category='startup';
-  const attachments=[{name:str(r,'fileNm')||'첨부파일',url:str(r,'flpthNm')},{name:str(r,'printFileNm')||'공고문',url:str(r,'printFlpthNm')}].filter(x=>safeUrl(x.url));
-  const base={canonical_key:`${k?'kstartup':'bizinfo'}:${external_id}`,title,agency,operator:plainText(str(r,k?'sprv_inst':'excInsttNm'))||null,
+  if(r._web&&['startup','business','rnd','investment','small_business'].includes(String(r._category)))category=r._category as Category;
+  const attachments=r._web&&Array.isArray(r._attachments)?r._attachments.filter((x:any)=>safeUrl(x.url)) as {name:string;url:string}[]:[{name:str(r,'fileNm')||'첨부파일',url:str(r,'flpthNm')},{name:str(r,'printFileNm')||'공고문',url:str(r,'printFlpthNm')}].filter(x=>safeUrl(x.url));
+  const family=r._web?(source==='semas'?'sbiz24':source):k?'kstartup':'bizinfo';
+  const base={canonical_key:`${family}:${external_id}`,title,agency,operator:plainText(str(r,k?'sprv_inst':'excInsttNm'))||null,
     category,fields:[field],regions:nationwide?['전국']:regions,region_estimated:!k,
     apply_start:period.start,apply_end:period.end,apply_end_at:null,deadline_kind:period.kind,
     deadline_text:k?`${str(r,'pbanc_rcpt_bgng_dt')} ~ ${str(r,'pbanc_rcpt_end_dt')}`:str(r,'reqstBeginEndDe'),

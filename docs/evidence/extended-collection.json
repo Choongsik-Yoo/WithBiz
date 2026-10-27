@@ -1,0 +1,191 @@
+{
+  "checked_at": "2026-10-27T06:59:15.010Z",
+  "results": [
+    {
+      "source": "ntis",
+      "count": 10,
+      "result": {
+        "new": 10,
+        "changed": 0,
+        "received": 10
+      },
+      "details": [
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete"
+      ]
+    },
+    {
+      "source": "smtech",
+      "error": "ZERO_RECORDS_OR_CHANGED_SCHEMA"
+    },
+    {
+      "source": "nipa",
+      "count": 9,
+      "result": {
+        "new": 9,
+        "changed": 0,
+        "received": 9
+      },
+      "details": [
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete"
+      ]
+    },
+    {
+      "source": "kocca",
+      "count": 8,
+      "result": {
+        "new": 8,
+        "changed": 0,
+        "received": 8
+      },
+      "details": [
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete"
+      ]
+    },
+    {
+      "source": "ccei",
+      "count": 10,
+      "result": {
+        "new": 10,
+        "changed": 0,
+        "received": 10
+      },
+      "details": [
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete"
+      ]
+    },
+    {
+      "source": "technopark",
+      "count": 6,
+      "result": {
+        "new": 6,
+        "changed": 0,
+        "received": 6
+      },
+      "details": [
+        "NETWORK_OR_TIMEOUT",
+        "complete",
+        "complete",
+        "complete",
+        "NETWORK_OR_TIMEOUT",
+        "complete"
+      ]
+    },
+    {
+      "source": "tips",
+      "count": 10,
+      "result": {
+        "new": 10,
+        "changed": 0,
+        "received": 10
+      },
+      "details": [
+        "EMPTY_DETAIL",
+        "EMPTY_DETAIL",
+        "complete",
+        "EMPTY_DETAIL",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete"
+      ]
+    },
+    {
+      "source": "kvic",
+      "count": 10,
+      "result": {
+        "new": 9,
+        "changed": 0,
+        "received": 10
+      },
+      "details": [
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete"
+      ]
+    },
+    {
+      "source": "sbiz24",
+      "count": 10,
+      "result": {
+        "new": 10,
+        "changed": 0,
+        "received": 10
+      },
+      "details": [
+        "official_index",
+        "official_index",
+        "official_index",
+        "official_index",
+        "official_index",
+        "official_index",
+        "official_index",
+        "official_index",
+        "official_index",
+        "official_index"
+      ]
+    },
+    {
+      "source": "semas",
+      "count": 10,
+      "result": {
+        "new": 0,
+        "changed": 10,
+        "received": 10
+      },
+      "details": [
+        "official_index",
+        "official_index",
+        "official_index",
+        "official_index",
+        "official_index",
+        "official_index",
+        "official_index",
+        "official_index",
+        "official_index",
+        "official_index"
+      ]
+    }
+  ]
+}

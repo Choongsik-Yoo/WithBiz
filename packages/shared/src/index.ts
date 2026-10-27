@@ -29,7 +29,7 @@ export const CompanySchema = z.object({
 export type CompanyInput = z.infer<typeof CompanySchema>;
 export type Company = CompanyInput & {id:string;owner_id:string;profile_version:number;updated_at:string};
 export interface Bookmark { user_id:string;announcement_id:string;memo:string;created_at:string;updated_at:string }
-export interface Source {code:string;name:string;homepage_url:string;is_active:boolean;last_success_at:string|null;last_error:string|null}
+export interface Source {code:string;name:string;homepage_url:string;priority:number;scope:string;connection_note:string;is_active:boolean;last_success_at:string|null;last_error:string|null}
 export interface NoticeSettings {user_id:string;email_enabled:boolean;deadline_offsets:number[];weekly_enabled:boolean;change_enabled:boolean}
 export function kstDate(now:Date=new Date()):string {
   const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(now);
@@ -70,3 +70,5 @@ export function companyCompleteness(c:Partial<CompanyInput>|null):number {
   if(!c)return 0;const values=[c.name,c.biz_type,c.size,c.sido,c.ksic_codes?.length,c.founded_on,c.revenue_band,c.employees!==null&&c.employees!==undefined,c.interests?.length,c.needs?.length];
   return Math.round(values.filter(Boolean).length/values.length*100);
 }
+
+export const SOURCE_LABELS:Record<string,string>={mss:'중기부',bizinfo:'기업마당',kstartup:'K-Startup',ntis:'NTIS',smtech:'SMTECH',sbiz24:'소상공인24',semas:'소진공',nipa:'NIPA',kocca:'KOCCA',ccei:'창조경제혁신센터',technopark:'테크노파크',tips:'TIPS',kvic:'한국벤처투자'};

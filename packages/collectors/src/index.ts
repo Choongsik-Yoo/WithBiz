@@ -1,7 +1,10 @@
-export type SourceCode='mss'|'bizinfo'|'kstartup';
+import {createWebCollector,WEB_SOURCES,type WebSourceCode} from './web';
+export {WEB_SOURCES,parseWebList,WebCollectionError} from './web';
+export type SourceCode='mss'|'bizinfo'|'kstartup'|WebSourceCode;
 export interface Collector { code:SourceCode;fetchList(page:number,size:number):Promise<{records:Record<string,unknown>[];total:number}>;fetchDetail(record:Record<string,unknown>):Promise<Record<string,unknown>>;toRaw(record:Record<string,unknown>):Record<string,unknown> }
 export class CollectionError extends Error {constructor(public code:string,public retryable=false){super(code);}}
 export function createCollector(code:SourceCode,key:string):Collector {
+  if(code in WEB_SOURCES)return createWebCollector(code as WebSourceCode);
   if(!key)throw new CollectionError('CONNECTION_REQUIRED');
   return {code,toRaw:r=>r,fetchDetail:async r=>r,async fetchList(page,size){
     const u=new URL(code==='mss'?'https://apis.data.go.kr/1421000/bizinfo/pblancBsnsService':code==='bizinfo'?'https://www.bizinfo.go.kr/uss/rss/bizinfoApi.do':'https://apis.data.go.kr/B552735/kisedKstartupService01/getAnnouncementInformation01');

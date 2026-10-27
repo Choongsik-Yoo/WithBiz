@@ -1,11 +1,12 @@
 'use client';
 import {Bookmark,ExternalLink,MapPin,ArrowUpRight} from 'lucide-react';
 import {CATEGORIES,announcementStatus,STATUS_LABELS,dday,type Announcement} from '@withbiz/shared';
+import {SOURCE_LABELS} from '@withbiz/shared';
 import type {MatchResult} from '@/lib/data';
 export function AnnouncementCard({a,saved,onSave,onOpen,match}:{a:Announcement;saved:boolean;onSave:()=>void;onOpen:()=>void;match?:MatchResult}) {
   const status=announcementStatus(a);
   return <article className="announcement-card">
-    <div className="card-top"><div className="badge-row"><span className={`badge category-${a.category}`}>{CATEGORIES[a.category]}</span><span className="source-label">{a.source_code==='mss'?'중기부':a.source_code==='bizinfo'?'기업마당':'K-Startup'}</span></div><span className={`badge deadline ${status==='closing'?'danger':status==='closed'?'neutral':'soft'}`}>{dday(a)}</span></div>
+    <div className="card-top"><div className="badge-row"><span className={`badge category-${a.category}`}>{CATEGORIES[a.category]}</span><span className="source-label">{SOURCE_LABELS[a.source_code]??a.source_code}</span></div><span className={`badge deadline ${status==='closing'?'danger':status==='closed'?'neutral':'soft'}`}>{dday(a)}</span></div>
     <h3><button className="title-button" onClick={onOpen}>{a.title}</button></h3>
     <p className="agency">{a.agency}{a.operator&&a.operator!==a.agency?` · ${a.operator}`:''}</p>
     <div className="card-meta"><span><MapPin size={14}/>{a.regions.join(' · ')||'지역 확인 필요'}{a.region_estimated&&a.regions.length>0?<small>추정</small>:null}</span><span>{a.fields.join(' · ')}</span></div>

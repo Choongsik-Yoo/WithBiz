@@ -2,6 +2,8 @@
 
 정부지원사업 공고 통합 조회와 기업 맞춤 추천 웹앱 개발 프로젝트다.
 
+최신 변경: [Google 승인 사용자·추가 출처 실제 수집](docs/05-google-access-and-sources.md). 관리자 `csyoo22@gmail.com`이 등록한 Gmail 계정만 Google 로그인 후 이용한다. NTIS·SMTECH·NIPA·KOCCA·창조경제혁신센터·테크노파크·TIPS·한국벤처투자·소상공인24·소진공 수집을 추가하여 검증 시점 총 1,502건을 저장했다. 이전 단계 문서는 변경 전 기록을 포함한다.
+
 실행 앱: https://choongsik-yoo.github.io/WithBiz/
 
 Next.js 정적 앱 + GitHub Pages + Supabase 인증/DB 구조로 구현했다. Node.js 24에서 `npm ci`, `npm run dev`로 실행한다. `npm run typecheck`, `npm test`, `npm run build`로 검증한다. Pages 빌드는 `NEXT_PUBLIC_BASE_PATH=/WithBiz`를 설정하며 출력은 `apps/web/out`이다.
