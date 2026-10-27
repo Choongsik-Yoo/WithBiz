@@ -13,4 +13,5 @@ try{const collector=createCollector(source,key);let total=0;
   console.log({source,page,received:records.length,result:result.data});if(page*100>=batch.total)break;
  }
  if(!total)throw new CollectionError('ZERO_RECORDS');
-}catch(e){const code=e instanceof CollectionError?e.code:'COLLECTION_FAILED';await db.rpc('record_collection_failure',{p_source:source,p_code:code});console.error(code);process.exitCode=1;}
+ check((await db.rpc('finish_collection_requests',{p_source:source,p_success:true})).error);
+}catch(e){const code=e instanceof CollectionError?e.code:'COLLECTION_FAILED';await db.rpc('record_collection_failure',{p_source:source,p_code:code});await db.rpc('finish_collection_requests',{p_source:source,p_success:false});console.error(code);process.exitCode=1;}
