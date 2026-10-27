@@ -1,0 +1,109 @@
+[
+  {
+    "source": "bizinfo",
+    "scenario": "page1",
+    "checkedAt": "2026-10-27T01:55:09.1488905+00:00",
+    "endpoint": "https://www.bizinfo.go.kr/uss/rss/bizinfoApi.do",
+    "query": "dataType=json&searchCnt=4&pageUnit=2&pageIndex=1",
+    "httpStatus": 200,
+    "success": true,
+    "apiError": null,
+    "rootFields": [
+      "jsonArray"
+    ],
+    "recordCount": 2,
+    "totalCount": 1420,
+    "ids": [
+      "PBLN_000000000127470",
+      "PBLN_000000000127469"
+    ],
+    "itemFields": [
+      "trgetNm",
+      "updtPnttm",
+      "hashtags",
+      "inqireCo",
+      "creatPnttm",
+      "pblancNm",
+      "pblancId",
+      "printFlpthNm",
+      "refrncNm",
+      "fileNm",
+      "pblancUrl",
+      "jrsdInsttNm",
+      "excInsttNm",
+      "totCnt",
+      "reqstMthPapersCn",
+      "pldirSportRealmLclasCodeNm",
+      "reqstBeginEndDe",
+      "flpthNm",
+      "bsnsSumryCn",
+      "pldirSportRealmMlsfcCodeNm",
+      "printFileNm"
+    ],
+    "sampleTitle": "[경기] 화성시 2026년 2차 스마트 물류비 지원사업 참가기업 모집 연장 공고",
+    "evidence": "bizinfo-page1.json"
+  },
+  {
+    "source": "bizinfo",
+    "scenario": "page2",
+    "checkedAt": "2026-10-27T01:55:09.5232674+00:00",
+    "endpoint": "https://www.bizinfo.go.kr/uss/rss/bizinfoApi.do",
+    "query": "dataType=json&searchCnt=4&pageUnit=2&pageIndex=2",
+    "httpStatus": 200,
+    "success": true,
+    "apiError": null,
+    "rootFields": [
+      "jsonArray"
+    ],
+    "recordCount": 2,
+    "totalCount": 1420,
+    "ids": [
+      "PBLN_000000000127468",
+      "PBLN_000000000127467"
+    ],
+    "itemFields": [
+      "trgetNm",
+      "updtPnttm",
+      "hashtags",
+      "inqireCo",
+      "creatPnttm",
+      "pblancNm",
+      "pblancId",
+      "printFlpthNm",
+      "refrncNm",
+      "pblancUrl",
+      "jrsdInsttNm",
+      "excInsttNm",
+      "totCnt",
+      "reqstMthPapersCn",
+      "pldirSportRealmLclasCodeNm",
+      "reqstBeginEndDe",
+      "bsnsSumryCn",
+      "pldirSportRealmMlsfcCodeNm",
+      "printFileNm"
+    ],
+    "sampleTitle": "[충북] 옥천군 2026년 우수기업(인) 및 유망 중소기업 선정 공고",
+    "evidence": "bizinfo-page2.json"
+  },
+  {
+    "source": "bizinfo",
+    "scenario": "empty",
+    "checkedAt": "2026-10-27T01:55:09.7180813+00:00",
+    "endpoint": "https://www.bizinfo.go.kr/uss/rss/bizinfoApi.do",
+    "query": "dataType=json&searchCnt=4&pageUnit=2&pageIndex=1&hashtags=WithBizVerificationNoMatch20261027",
+    "httpStatus": 200,
+    "success": true,
+    "apiError": null,
+    "rootFields": [
+      "jsonArray"
+    ],
+    "recordCount": 0,
+    "totalCount": null,
+    "ids": [],
+    "itemFields": [
+      null
+    ],
+    "sampleTitle": null,
+    "evidence": "bizinfo-empty.json"
+  }
+]

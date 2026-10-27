@@ -3,6 +3,13 @@
 !.env.example
 node_modules/
 .next/
-out/
 coverage/
+docs/evidence/private/
+out/
 *.tsbuildinfo
+__pycache__/
+.supabase/
+test-results/
+playwright-report/
+docs/verification/*round*.mjs
+scripts/private/

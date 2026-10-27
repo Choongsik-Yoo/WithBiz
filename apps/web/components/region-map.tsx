@@ -1,0 +1,7 @@
+'use client';
+import map from '@svg-maps/south-korea';
+const names:Record<string,string>={busan:'부산',daegu:'대구',daejeon:'대전',gangwon:'강원',gwangju:'광주',gyeonggi:'경기',incheon:'인천',jeju:'제주','north-chungcheong':'충북','north-gyeongsang':'경북','north-jeolla':'전북',sejong:'세종',seoul:'서울','south-chungcheong':'충남','south-gyeongsang':'경남','south-jeolla':'전남',ulsan:'울산'};
+export function RegionMap({counts,selected,onSelect}:{counts:Record<string,number>;selected:string;onSelect:(s:string)=>void}) {
+ const max=Math.max(1,...Object.values(counts));
+ return <div className="region-map"><svg viewBox={map.viewBox} role="group" aria-label="대한민국 시도별 공고 분포">{map.locations.map(location=>{const name=names[location.id],count=counts[name]??0,active=selected===name;return <path key={location.id} d={location.path} role="button" tabIndex={0} aria-label={`${name} ${count}건`} aria-pressed={active} onClick={()=>onSelect(active?'':name)} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();onSelect(active?'':name);}}} style={{fill:active?'#173171':count?`rgb(${225-Math.round(count/max*110)}, ${233-Math.round(count/max*110)}, ${250-Math.round(count/max*40)})`:'#edf0f5'}}><title>{name} · {count.toLocaleString()}건</title></path>;})}</svg><div className="map-attribution"><a href="https://github.com/VictorCazanave/svg-maps/tree/master/packages/south-korea" target="_blank" rel="noopener noreferrer">지도: svg-maps · CC BY 4.0</a></div></div>;
+}

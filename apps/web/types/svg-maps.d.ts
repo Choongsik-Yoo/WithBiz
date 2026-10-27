@@ -1,0 +1,1 @@
+declare module '@svg-maps/south-korea' {const map:{label:string;viewBox:string;locations:{id:string;name:string;path:string}[]};export default map;}

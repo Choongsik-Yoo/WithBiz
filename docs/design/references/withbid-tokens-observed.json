@@ -1,0 +1,577 @@
+{
+  "url": "https://choongsik-yoo.github.io/widbid/",
+  "title": "WithBid AI",
+  "checkedAt": "2026-10-27T02:28:45.753Z",
+  "viewport": {
+    "width": 1259,
+    "height": 771
+  },
+  "variables": {
+    "--green-bg": "#e8f7f0",
+    "--panel": "#ffffff",
+    "--primary": "#3157d5",
+    "--muted": "#68758a",
+    "--green": "#12805c",
+    "--text": "#172033",
+    "--amber-bg": "#fff3d6",
+    "--primary-dark": "#2446b8",
+    "--gray-bg": "#eef1f5",
+    "--red": "#bd2c2c",
+    "--line": "#dfe5ee",
+    "--red-bg": "#feecec",
+    "--bg": "#f4f7fb",
+    "--amber": "#ad6500"
+  },
+  "ranked": {
+    "colors": [
+      [
+        "rgb(23, 32, 51)",
+        89
+      ],
+      [
+        "rgb(66, 80, 106)",
+        15
+      ],
+      [
+        "rgb(49, 87, 213)",
+        13
+      ],
+      [
+        "rgb(104, 117, 138)",
+        12
+      ],
+      [
+        "rgb(83, 97, 121)",
+        8
+      ],
+      [
+        "rgb(52, 66, 90)",
+        7
+      ],
+      [
+        "rgb(255, 255, 255)",
+        6
+      ],
+      [
+        "rgb(36, 78, 188)",
+        5
+      ],
+      [
+        "rgb(131, 180, 255)",
+        1
+      ]
+    ],
+    "backgrounds": [
+      [
+        "rgba(0, 0, 0, 0)",
+        121
+      ],
+      [
+        "rgb(255, 255, 255)",
+        14
+      ],
+      [
+        "rgb(234, 240, 255)",
+        10
+      ],
+      [
+        "rgb(247, 249, 252)",
+        8
+      ],
+      [
+        "rgb(23, 49, 113)",
+        1
+      ],
+      [
+        "rgb(233, 239, 255)",
+        1
+      ],
+      [
+        "rgb(49, 87, 213)",
+        1
+      ]
+    ],
+    "fonts": [
+      [
+        "Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+        156
+      ]
+    ],
+    "fontSizes": [
+      [
+        "14px",
+        72
+      ],
+      [
+        "16px",
+        41
+      ],
+      [
+        "12px",
+        16
+      ],
+      [
+        "11.6667px",
+        10
+      ],
+      [
+        "13px",
+        8
+      ],
+      [
+        "28px",
+        6
+      ],
+      [
+        "21px",
+        2
+      ],
+      [
+        "18px",
+        1
+      ]
+    ],
+    "radii": [
+      [
+        "0px",
+        125
+      ],
+      [
+        "999px",
+        10
+      ],
+      [
+        "8px",
+        8
+      ],
+      [
+        "9px",
+        6
+      ],
+      [
+        "13px",
+        6
+      ],
+      [
+        "5px 5px 0px 0px",
+        1
+      ]
+    ],
+    "gaps": [
+      [
+        "normal",
+        146
+      ],
+      [
+        "10px",
+        7
+      ],
+      [
+        "18px",
+        1
+      ],
+      [
+        "20px",
+        1
+      ],
+      [
+        "14px",
+        1
+      ]
+    ]
+  },
+  "landmarks": [
+    {
+      "tag": "HEADER",
+      "text": "☰\n        WithBid AI\n        공공입찰 분석 시스템\n        CHOONGSIK YOO로그아웃",
+      "className": "topbar",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(23, 49, 113)",
+      "border": "0px none rgb(255, 255, 255)",
+      "radius": "0px",
+      "padding": "0px 24px",
+      "font": "16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 1244,
+      "height": 64
+    },
+    {
+      "tag": "BUTTON",
+      "text": "☰",
+      "className": "mobile-menu",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(255, 255, 255)",
+      "radius": "0px",
+      "padding": "1px 6px",
+      "font": "24px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "tag": "BUTTON",
+      "text": "로그아웃",
+      "className": "btn btn-secondary",
+      "color": "rgb(52, 66, 90)",
+      "background": "rgb(255, 255, 255)",
+      "border": "0.666667px solid rgb(200, 209, 223)",
+      "radius": "8px",
+      "padding": "10px 15px",
+      "font": "700 13px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 79.17708587646484,
+      "height": 40.66666793823242
+    },
+    {
+      "tag": "ASIDE",
+      "text": "▦대시보드\n            \n            \n              ⌕공고 검색\n            \n            \n              ★관심 공고\n            \n            \n              ",
+      "className": "sidebar",
+      "color": "rgb(23, 32, 51)",
+      "background": "rgb(255, 255, 255)",
+      "border": "",
+      "radius": "0px",
+      "padding": "20px 12px",
+      "font": "16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 220,
+      "height": 874.6666870117188
+    },
+    {
+      "tag": "BUTTON",
+      "text": "▦대시보드",
+      "className": "nav-button active",
+      "color": "rgb(49, 87, 213)",
+      "background": "rgb(233, 239, 255)",
+      "border": "0px none rgb(49, 87, 213)",
+      "radius": "9px",
+      "padding": "12px 14px",
+      "font": "700 16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 195.33334350585938,
+      "height": 47.333335876464844
+    },
+    {
+      "tag": "BUTTON",
+      "text": "⌕공고 검색",
+      "className": "nav-button ",
+      "color": "rgb(66, 80, 106)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(66, 80, 106)",
+      "radius": "9px",
+      "padding": "12px 14px",
+      "font": "16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 195.33334350585938,
+      "height": 47.333335876464844
+    },
+    {
+      "tag": "BUTTON",
+      "text": "★관심 공고",
+      "className": "nav-button ",
+      "color": "rgb(66, 80, 106)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(66, 80, 106)",
+      "radius": "9px",
+      "padding": "12px 14px",
+      "font": "16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 195.33334350585938,
+      "height": 47.333335876464844
+    },
+    {
+      "tag": "BUTTON",
+      "text": "⇄업무 보드",
+      "className": "nav-button ",
+      "color": "rgb(66, 80, 106)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(66, 80, 106)",
+      "radius": "9px",
+      "padding": "12px 14px",
+      "font": "16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 195.33334350585938,
+      "height": 47.333335876464844
+    },
+    {
+      "tag": "BUTTON",
+      "text": "◷지난공고",
+      "className": "nav-button ",
+      "color": "rgb(66, 80, 106)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(66, 80, 106)",
+      "radius": "9px",
+      "padding": "12px 14px",
+      "font": "16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 195.33334350585938,
+      "height": 47.333335876464844
+    },
+    {
+      "tag": "BUTTON",
+      "text": "⚙설정",
+      "className": "nav-button ",
+      "color": "rgb(66, 80, 106)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(66, 80, 106)",
+      "radius": "9px",
+      "padding": "12px 14px",
+      "font": "16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 195.33334350585938,
+      "height": 47.333335876464844
+    },
+    {
+      "tag": "MAIN",
+      "text": "대시보드오늘 확인해야 할 공고와 업무 현황입니다.공고 검색\n    \n    \n    \n    \n      전체 공고300마감 전 공고\n      마감 7일 이내138우선 확인 필요\n      참여 가능성 높음27070점 이상\n      조건 확인 필요",
+      "className": "main",
+      "color": "rgb(23, 32, 51)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(23, 32, 51)",
+      "radius": "0px",
+      "padding": "28px",
+      "font": "16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 1024,
+      "height": 874.6666870117188
+    },
+    {
+      "tag": "H1",
+      "text": "대시보드",
+      "className": "",
+      "color": "rgb(23, 32, 51)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(23, 32, 51)",
+      "radius": "0px",
+      "padding": "0px",
+      "font": "700 28px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 277.10418701171875,
+      "height": 40.66666793823242
+    },
+    {
+      "tag": "BUTTON",
+      "text": "공고 검색",
+      "className": "btn btn-primary",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(49, 87, 213)",
+      "border": "0px none rgb(255, 255, 255)",
+      "radius": "8px",
+      "padding": "10px 15px",
+      "font": "700 16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 93.36458587646484,
+      "height": 43.333335876464844
+    },
+    {
+      "tag": "BUTTON",
+      "text": "전체 공고300마감 전 공고",
+      "className": "metric metric-button",
+      "color": "rgb(23, 32, 51)",
+      "background": "rgb(255, 255, 255)",
+      "border": "0.666667px solid rgb(223, 229, 238)",
+      "radius": "13px",
+      "padding": "18px",
+      "font": "16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 182.39584350585938,
+      "height": 126.66667175292969
+    },
+    {
+      "tag": "BUTTON",
+      "text": "마감 7일 이내138우선 확인 필요",
+      "className": "metric metric-button",
+      "color": "rgb(23, 32, 51)",
+      "background": "rgb(255, 255, 255)",
+      "border": "0.666667px solid rgb(223, 229, 238)",
+      "radius": "13px",
+      "padding": "18px",
+      "font": "16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 182.39584350585938,
+      "height": 126.66667175292969
+    },
+    {
+      "tag": "BUTTON",
+      "text": "참여 가능성 높음27070점 이상",
+      "className": "metric metric-button",
+      "color": "rgb(23, 32, 51)",
+      "background": "rgb(255, 255, 255)",
+      "border": "0.666667px solid rgb(223, 229, 238)",
+      "radius": "13px",
+      "padding": "18px",
+      "font": "16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 182.40625,
+      "height": 126.66667175292969
+    },
+    {
+      "tag": "BUTTON",
+      "text": "조건 확인 필요300위험요소 포함",
+      "className": "metric metric-button",
+      "color": "rgb(23, 32, 51)",
+      "background": "rgb(255, 255, 255)",
+      "border": "0.666667px solid rgb(223, 229, 238)",
+      "radius": "13px",
+      "padding": "18px",
+      "font": "16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 182.39584350585938,
+      "height": 126.66667175292969
+    },
+    {
+      "tag": "BUTTON",
+      "text": "관심 공고0마감 전 저장 공고",
+      "className": "metric metric-button",
+      "color": "rgb(23, 32, 51)",
+      "background": "rgb(255, 255, 255)",
+      "border": "0.666667px solid rgb(223, 229, 238)",
+      "radius": "13px",
+      "padding": "18px",
+      "font": "16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 182.40625,
+      "height": 126.66667175292969
+    },
+    {
+      "tag": "H2",
+      "text": "우선 검토 공고",
+      "className": "",
+      "color": "rgb(23, 32, 51)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(23, 32, 51)",
+      "radius": "0px",
+      "padding": "0px",
+      "font": "700 18px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 109.44792175292969,
+      "height": 26
+    },
+    {
+      "tag": "BUTTON",
+      "text": "전체 보기",
+      "className": "btn btn-secondary",
+      "color": "rgb(52, 66, 90)",
+      "background": "rgb(255, 255, 255)",
+      "border": "0.666667px solid rgb(200, 209, 223)",
+      "radius": "8px",
+      "padding": "10px 15px",
+      "font": "700 16px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 94.69792175292969,
+      "height": 44.66666793823242
+    },
+    {
+      "tag": "BUTTON",
+      "text": "특수교사 보급용 태블릿 컴퓨터 물품 구매 입찰 공고(긴급)",
+      "className": "title-link",
+      "color": "rgb(36, 78, 188)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(36, 78, 188)",
+      "radius": "0px",
+      "padding": "0px",
+      "font": "700 14px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 276.4375,
+      "height": 40
+    },
+    {
+      "tag": "BUTTON",
+      "text": "☆",
+      "className": "btn btn-secondary",
+      "color": "rgb(52, 66, 90)",
+      "background": "rgb(255, 255, 255)",
+      "border": "0.666667px solid rgb(200, 209, 223)",
+      "radius": "8px",
+      "padding": "10px 15px",
+      "font": "700 14px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 45.333335876464844,
+      "height": 41.333335876464844
+    },
+    {
+      "tag": "BUTTON",
+      "text": "서버 모니터링용 KVM 구매",
+      "className": "title-link",
+      "color": "rgb(36, 78, 188)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(36, 78, 188)",
+      "radius": "0px",
+      "padding": "0px",
+      "font": "700 14px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 157.5625,
+      "height": 20
+    },
+    {
+      "tag": "BUTTON",
+      "text": "☆",
+      "className": "btn btn-secondary",
+      "color": "rgb(52, 66, 90)",
+      "background": "rgb(255, 255, 255)",
+      "border": "0.666667px solid rgb(200, 209, 223)",
+      "radius": "8px",
+      "padding": "10px 15px",
+      "font": "700 14px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 45.333335876464844,
+      "height": 41.333335876464844
+    },
+    {
+      "tag": "BUTTON",
+      "text": "[의료기기] 열희석심박출량모니터 1SET 구매",
+      "className": "title-link",
+      "color": "rgb(36, 78, 188)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(36, 78, 188)",
+      "radius": "0px",
+      "padding": "0px",
+      "font": "700 14px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 262.78125,
+      "height": 20
+    },
+    {
+      "tag": "BUTTON",
+      "text": "☆",
+      "className": "btn btn-secondary",
+      "color": "rgb(52, 66, 90)",
+      "background": "rgb(255, 255, 255)",
+      "border": "0.666667px solid rgb(200, 209, 223)",
+      "radius": "8px",
+      "padding": "10px 15px",
+      "font": "700 14px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 45.333335876464844,
+      "height": 41.333335876464844
+    },
+    {
+      "tag": "BUTTON",
+      "text": "인공지능(딥러닝) 연구용 GPU 서버 구입",
+      "className": "title-link",
+      "color": "rgb(36, 78, 188)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(36, 78, 188)",
+      "radius": "0px",
+      "padding": "0px",
+      "font": "700 14px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 236.4375,
+      "height": 20
+    },
+    {
+      "tag": "BUTTON",
+      "text": "☆",
+      "className": "btn btn-secondary",
+      "color": "rgb(52, 66, 90)",
+      "background": "rgb(255, 255, 255)",
+      "border": "0.666667px solid rgb(200, 209, 223)",
+      "radius": "8px",
+      "padding": "10px 15px",
+      "font": "700 14px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 45.333335876464844,
+      "height": 41.333335876464844
+    },
+    {
+      "tag": "BUTTON",
+      "text": "공통 수요 태블릿 PC 등",
+      "className": "title-link",
+      "color": "rgb(36, 78, 188)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(36, 78, 188)",
+      "radius": "0px",
+      "padding": "0px",
+      "font": "700 14px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 137.25,
+      "height": 20
+    },
+    {
+      "tag": "BUTTON",
+      "text": "☆",
+      "className": "btn btn-secondary",
+      "color": "rgb(52, 66, 90)",
+      "background": "rgb(255, 255, 255)",
+      "border": "0.666667px solid rgb(200, 209, 223)",
+      "radius": "8px",
+      "padding": "10px 15px",
+      "font": "700 14px Inter, Pretendard, \"Noto Sans KR\", system-ui, -apple-system, sans-serif",
+      "width": 45.333335876464844,
+      "height": 41.333335876464844
+    }
+  ],
+  "links": [],
+  "themeControls": []
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "Kind": "detail",
+    "Url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127470",
+    "Method": "GET",
+    "HttpStatus": 200,
+    "ContentType": [
+      "text/html; charset=UTF-8"
+    ],
+    "ContentLength": null,
+    "ContentDisposition": null,
+    "ContainsAnnouncementId": true,
+    "ContainsTitle": true
+  },
+  {
+    "Kind": "attachment",
+    "Url": "https://www.bizinfo.go.kr/cmm/fms/getImageFile.do?atchFileId=FILE_000000000777755&fileSn=1",
+    "HttpStatus": 403,
+    "ErrorType": "Microsoft.PowerShell.Commands.HttpResponseException"
+  },
+  {
+    "Kind": "original-document",
+    "Url": "https://www.bizinfo.go.kr/cmm/fms/getImageFile.do?atchFileId=FILE_000000000777754&fileSn=1",
+    "HttpStatus": 403,
+    "ErrorType": "Microsoft.PowerShell.Commands.HttpResponseException"
+  }
+]

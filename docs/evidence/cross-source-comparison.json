@@ -1,0 +1,36 @@
+{
+  "CheckedAt": "2026-10-27T03:01:25.4923855+00:00",
+  "Scope": "Four records per endpoint; not a complete dataset overlap measurement",
+  "BizinfoSampleCount": 4,
+  "MssSampleCount": 4,
+  "Comparisons": [
+    {
+      "Id": "PBLN_000000000127470",
+      "FoundInMss": true,
+      "TitleEqual": true,
+      "DatesEqual": true,
+      "OriginalUrlEqual": true
+    },
+    {
+      "Id": "PBLN_000000000127469",
+      "FoundInMss": true,
+      "TitleEqual": true,
+      "DatesEqual": true,
+      "OriginalUrlEqual": true
+    },
+    {
+      "Id": "PBLN_000000000127468",
+      "FoundInMss": true,
+      "TitleEqual": true,
+      "DatesEqual": true,
+      "OriginalUrlEqual": true
+    },
+    {
+      "Id": "PBLN_000000000127467",
+      "FoundInMss": true,
+      "TitleEqual": true,
+      "DatesEqual": true,
+      "OriginalUrlEqual": true
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "compilerOptions": { "target": "ES2022", "lib": ["ES2022", "DOM"], "module": "ESNext", "moduleResolution": "Bundler", "strict": true, "esModuleInterop": true, "skipLibCheck": true, "resolveJsonModule": true, "allowImportingTsExtensions": true, "noEmit": true, "types": ["node"] },
+  "include": ["packages/**/*.ts", "jobs/**/*.ts", "tests/**/*.ts"],
+  "exclude": ["node_modules", "apps", "supabase/functions"]
+}

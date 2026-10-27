@@ -1,0 +1,24 @@
+[
+  {
+    "Kind": "attachment",
+    "Url": "https://www.bizinfo.go.kr/cmm/fms/getImageFile.do?atchFileId=FILE_000000000777755&fileSn=1",
+    "Method": "GET",
+    "HttpStatus": 500,
+    "ContentType": "text/html; charset=utf-8",
+    "ContentLength": 3599,
+    "ContentDisposition": "",
+    "FirstBytes": null,
+    "DownloadComplete": false
+  },
+  {
+    "Kind": "original-document",
+    "Url": "https://www.bizinfo.go.kr/cmm/fms/getImageFile.do?atchFileId=FILE_000000000777754&fileSn=1",
+    "Method": "GET",
+    "HttpStatus": 500,
+    "ContentType": "text/html; charset=utf-8",
+    "ContentLength": 3475,
+    "ContentDisposition": "",
+    "FirstBytes": null,
+    "DownloadComplete": false
+  }
+]

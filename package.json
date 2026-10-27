@@ -1,0 +1,29 @@
+{
+  "name": "withbiz-ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/web",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@withbiz/web",
+    "build": "npm run build --workspace=@withbiz/web",
+    "typecheck": "tsc --noEmit -p tsconfig.json && npm run typecheck --workspace=@withbiz/web",
+    "test": "vitest run",
+    "collect": "tsx --env-file=.env.local jobs/daily-collect.ts",
+    "match": "tsx --env-file=.env.local jobs/daily-match.ts",
+    "notify": "tsx --env-file=.env.local jobs/send-notifications.ts"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "tsx": "4.23.15",
+    "vitest": "5.0.5",
+    "@types/node": "24.19.2"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.118.0",
+    "zod": "4.6.7"
+  }
+}

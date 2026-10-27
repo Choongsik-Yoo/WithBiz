@@ -1,0 +1,13 @@
+[
+  {
+    "source": "kstartup",
+    "scenario": "page1",
+    "checkedAt": "2026-10-27T02:47:36.7712152+00:00",
+    "endpoint": "https://apis.data.go.kr/B552735/kisedKstartupService01/getAnnouncementInformation01",
+    "query": "returnType=json&perPage=2&page=1",
+    "httpStatus": 403,
+    "success": false,
+    "errorType": "Microsoft.PowerShell.Commands.HttpResponseException",
+    "errorBody": "\r\n{\r\n  \"OpenAPI_ServiceResponse\": {\r\n    \"cmmMsgHeader\": {\r\n      \"errMsg\": \"SERVICE_KEY_IS_NOT_REGISTERED_ERROR\",\r\n      \"returnAuthMsg\": \"\\uB4F1\\uB85D\\uB418\\uC9C0 \\uC54A\\uC740 \\uC11C\\uBE44\\uC2A4\\uD0A4\",\r\n      \"returnReasonCode\": \"30\"\r\n    }\r\n  }\r\n}"
+  }
+]

@@ -1,0 +1,25 @@
+name: Collect official announcements
+on:
+  schedule:
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: collect
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx tsx jobs/daily-collect.ts
+        env:
+          SUPABASE_URL: https://uqlaropgcluedhctzcao.supabase.co
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          MSS_API_KEY: ${{ secrets.MSS_API_KEY }}

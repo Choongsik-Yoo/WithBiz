@@ -1,0 +1,15 @@
+{
+  "VerifiedAt": "2026-10-27T02:00:07.0023862+00:00",
+  "VerificationScriptParseErrors": 0,
+  "EvidenceContainsCurrentKeys": false,
+  "EnvironmentFileIgnored": true,
+  "EnvironmentFileTracked": false,
+  "PublicKeyUnchangedByUriEncoding": true,
+  "PublicKeyHasNoOuterWhitespace": true,
+  "BizinfoPageCounts": [
+    2,
+    2
+  ],
+  "BizinfoSampleIdsUnique": true,
+  "BizinfoEmptyCount": 0
+}

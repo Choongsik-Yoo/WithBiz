@@ -1,0 +1,58 @@
+{
+  "images": [
+    "C:\\Users\\csyoo\\OneDrive\\문서\\PPT만들기\\withbiz-ai\\docs\\design\\wireframes\\dashboard-desktop.png",
+    "C:\\Users\\csyoo\\OneDrive\\문서\\PPT만들기\\withbiz-ai\\docs\\design\\wireframes\\dashboard-mobile.png",
+    "C:\\Users\\csyoo\\OneDrive\\문서\\PPT만들기\\withbiz-ai\\docs\\design\\wireframes\\announcement-detail.png"
+  ],
+  "contrastChecks": [
+    {
+      "foreground": "#172033",
+      "background": "#FFFFFF",
+      "ratio": 16.27,
+      "passesAA": true
+    },
+    {
+      "foreground": "#536179",
+      "background": "#FFFFFF",
+      "ratio": 6.26,
+      "passesAA": true
+    },
+    {
+      "foreground": "#3157D5",
+      "background": "#FFFFFF",
+      "ratio": 6.08,
+      "passesAA": true
+    },
+    {
+      "foreground": "#FFFFFF",
+      "background": "#3157D5",
+      "ratio": 6.08,
+      "passesAA": true
+    },
+    {
+      "foreground": "#FFFFFF",
+      "background": "#173171",
+      "ratio": 12.25,
+      "passesAA": true
+    },
+    {
+      "foreground": "#0F7655",
+      "background": "#E8F7F0",
+      "ratio": 5.07,
+      "passesAA": true
+    },
+    {
+      "foreground": "#8C5200",
+      "background": "#FFF3D6",
+      "ratio": 5.73,
+      "passesAA": true
+    },
+    {
+      "foreground": "#BD2C2C",
+      "background": "#FEECEC",
+      "ratio": 5.17,
+      "passesAA": true
+    }
+  ],
+  "allPairsPassAA": true
+}
