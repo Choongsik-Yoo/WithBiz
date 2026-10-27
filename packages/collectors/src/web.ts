@@ -48,7 +48,7 @@ export function parseWebList(code:WebSourceCode,html:string):Link[]{
 }
 function content($:CheerioAPI):string{
  $('script,style,nav,header,footer,.satisfaction,.contents_info,.gnb,.lnb').remove();
- for(const selector of ['.board_cont','.board-view-content','.board-view','.boardView','.view_cont','.bbs_view','#contents','.content','main','body']){const n=$(selector).first();if(n.text().trim().length>80)return text(n.text()).slice(0,45000);}
+ for(const selector of ['.board_cont','.board-view-content','.board-view','.boardView','.view_cont','.bbs_view','#subcontent','#contents','.contents','.content','main','body']){const n=$(selector).first();if(n.text().trim().length>80)return text(n.text()).slice(0,45000);}
  return '';
 }
 export function createWebCollector(code:WebSourceCode):Collector{

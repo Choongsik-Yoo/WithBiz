@@ -12,8 +12,9 @@ export function AuthPanel({onClose,onMessage}:{onClose:()=>void;onMessage:(s:str
 }
 
 export function AccessGate({children}:{children:ReactNode}){
+ function cleanCallback(){const hash=new URLSearchParams(window.location.hash.slice(1));const query=new URLSearchParams(window.location.search);if(hash.has('access_token')||hash.has('refresh_token')||query.has('code')){query.delete('code');const search=query.toString();window.history.replaceState(null,'',window.location.pathname+(search?'?'+search:'')+'#dashboard');}}
  const client=useQueryClient();const [session,setSession]=useState<Session|null>(null),[ready,setReady]=useState(false),[open,setOpen]=useState(false),[message,setMessage]=useState('');
- useEffect(()=>{let alive=true;supabase.auth.getSession().then(({data})=>{if(alive){setSession(data.session);setReady(true);}});const {data}=supabase.auth.onAuthStateChange((_event,s)=>{setSession(s);setReady(true);if(!s){client.clear();}});return()=>{alive=false;data.subscription.unsubscribe();};},[client]);
+ useEffect(()=>{let alive=true;supabase.auth.getSession().then(({data})=>{if(alive){if(data.session)cleanCallback();setSession(data.session);setReady(true);}});const {data}=supabase.auth.onAuthStateChange((_event,s)=>{if(s)cleanCallback();setSession(s);setReady(true);if(!s){client.clear();}});return()=>{alive=false;data.subscription.unsubscribe();};},[client]);
  const access=useQuery({queryKey:['access',session?.user.id],enabled:ready&&!!session,queryFn:async()=>{const {data,error}=await supabase.rpc('access_status');if(error)throw Error('접근 권한을 확인하지 못했습니다.');return data as {allowed:boolean;role:string};},refetchInterval:45000,refetchOnWindowFocus:true,retry:1});
  if(ready&&session&&access.data?.allowed)return <div key={session.user.id}>{children}</div>;
  const pending=!ready||!!session&&access.isPending;
