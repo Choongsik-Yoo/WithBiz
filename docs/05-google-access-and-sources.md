@@ -41,3 +41,12 @@ K-Startup은 기존 인증 연결 보류 상태다. AI 분석과 실제 알림 �
 - 승인 사용자 접근/비승인 차단/비밀번호 차단/역할 위조 차단/즉시 이용 차단 SQL 검증 통과
 
 공식 연결 방식 참고: [Supabase Google 로그인](https://supabase.com/docs/guides/auth/social-sign-in/auth-google), [JWT 인증 방식](https://supabase.com/docs/guides/auth/jwt-fields).
+
+## 최종 운영 검증 (2026-10-27)
+
+GitHub Actions 수집 실행 `40469647173`에서 중기부와 추가 10개 출처 작업이 모두 성공했다. 최신 DB 집계는 고유 공고 1,583건, 등록 출처 13개, 활성 수집 출처 11개다. 최신 증거는 `docs/evidence/extended-collection-latest.json`에 저장한다. 관리자 재수집 요청도 활성 출처 전체를 허용하도록 확장했다.
+
+Google 제공자는 운영 상태로 설정했으며 이메일/비밀번호 제공자는 비활성화했다. 공개 사이트에서 실제 관리자 Google 로그인, 사용자 등록 폼 저장, 13개 출처와 우선순위 3개 표시를 확인했다. OAuth는 PKCE를 사용하고 로그인 완료 후 콜백 코드를 주소에서 제거한다. 서버는 실제 활성 인증 세션도 검사하여 로그아웃 또는 세션 폐기 후 남은 JWT로 접근하지 못하도록 한다. 세션 폐기 차단을 포함한 SQL 권한 검증은 롤백으로 통과했다.
+
+PKCE 변경의 GitHub Pages 실행 `40469299075`도 성공했다. 관리자 계정 외 실제 사용자 이메일은 추가하지 않았다.
+

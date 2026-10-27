@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-10-27T07:26:47.291Z",
-  "unique_announcements": 1502,
+  "checked_at": "2026-10-27T07:56:01.291Z",
+  "unique_announcements": 1583,
   "sources": [
     {
       "code": "bizinfo",
@@ -16,16 +16,16 @@
       "name": "창조경제혁신센터",
       "is_active": true,
       "last_error": null,
-      "last_success_at": "2026-10-27T06:58:32.365247+00:00",
+      "last_success_at": "2026-10-27T07:52:59.481679+00:00",
       "connection_note": "공식 공고 목록·상세 페이지 수집",
-      "source_records": 10
+      "source_records": 30
     },
     {
       "code": "kocca",
       "name": "KOCCA 한국콘텐츠진흥원",
       "is_active": true,
       "last_error": null,
-      "last_success_at": "2026-10-27T06:58:26.004563+00:00",
+      "last_success_at": "2026-10-27T07:52:30.374064+00:00",
       "connection_note": "공식 공고 목록·상세 페이지 수집",
       "source_records": 8
     },
@@ -43,7 +43,7 @@
       "name": "한국벤처투자 투자 프로그램",
       "is_active": true,
       "last_error": null,
-      "last_success_at": "2026-10-27T06:58:56.476996+00:00",
+      "last_success_at": "2026-10-27T07:53:30.893346+00:00",
       "connection_note": "공식 공고 목록·상세 페이지 수집",
       "source_records": 10
     },
@@ -52,16 +52,16 @@
       "name": "중소벤처기업부 · 기업마당",
       "is_active": true,
       "last_error": null,
-      "last_success_at": "2026-10-27T05:32:38.198+00:00",
+      "last_success_at": "2026-10-27T07:51:58.042124+00:00",
       "connection_note": "",
-      "source_records": 1420
+      "source_records": 1451
     },
     {
       "code": "nipa",
       "name": "NIPA 정보통신산업진흥원",
       "is_active": true,
       "last_error": null,
-      "last_success_at": "2026-10-27T06:58:18.065658+00:00",
+      "last_success_at": "2026-10-27T07:52:22.452107+00:00",
       "connection_note": "공식 공고 목록·상세 페이지 수집",
       "source_records": 9
     },
@@ -70,7 +70,7 @@
       "name": "NTIS 국가R&D 사업공고",
       "is_active": true,
       "last_error": null,
-      "last_success_at": "2026-10-27T06:58:09.447245+00:00",
+      "last_success_at": "2026-10-27T07:51:52.145343+00:00",
       "connection_note": "공식 공고 목록·상세 페이지 수집",
       "source_records": 10
     },
@@ -79,45 +79,45 @@
       "name": "소상공인24",
       "is_active": true,
       "last_error": null,
-      "last_success_at": "2026-10-27T06:59:05.296191+00:00",
+      "last_success_at": "2026-10-27T07:53:26.688819+00:00",
       "connection_note": "소진공 공식 홈페이지의 소상공인24 연계 목록 수집 · 상세 원문 확인",
-      "source_records": 10
+      "source_records": 12
     },
     {
       "code": "semas",
       "name": "소상공인시장진흥공단",
       "is_active": true,
       "last_error": null,
-      "last_success_at": "2026-10-27T06:59:15.199328+00:00",
+      "last_success_at": "2026-10-27T07:53:33.834335+00:00",
       "connection_note": "소진공 공식 홈페이지의 소상공인24 연계 목록 수집 · 상세 원문 확인",
-      "source_records": 10
+      "source_records": 12
     },
     {
       "code": "smtech",
       "name": "SMTECH 중소기업기술정보진흥원",
       "is_active": true,
       "last_error": null,
-      "last_success_at": "2026-10-27T07:01:29.941597+00:00",
+      "last_success_at": "2026-10-27T07:52:18.553504+00:00",
       "connection_note": "공식 R&D 공고 목록·상세 페이지 수집",
-      "source_records": 10
+      "source_records": 30
     },
     {
       "code": "technopark",
       "name": "지역 테크노파크 · 한국테크노파크진흥회",
       "is_active": true,
       "last_error": null,
-      "last_success_at": "2026-10-27T06:58:40.873719+00:00",
+      "last_success_at": "2026-10-27T07:53:00.911261+00:00",
       "connection_note": "공식 공고 목록·상세 페이지 수집",
-      "source_records": 6
+      "source_records": 7
     },
     {
       "code": "tips",
       "name": "TIPS 투자·창업 프로그램",
       "is_active": true,
       "last_error": null,
-      "last_success_at": "2026-10-27T06:58:46.138976+00:00",
+      "last_success_at": "2026-10-27T07:53:03.138832+00:00",
       "connection_note": "공식 공고 목록·상세 페이지 수집",
-      "source_records": 10
+      "source_records": 17
     }
   ]
 }
