@@ -1,5 +1,5 @@
 import {createWebCollector,WEB_SOURCES,type WebSourceCode} from './web';
-export {WEB_SOURCES,parseWebList,WebCollectionError} from './web';
+export {WEB_SOURCES,parseWebList,parseSbaDetail,WebCollectionError} from './web';
 export type SourceCode='mss'|'bizinfo'|'kstartup'|WebSourceCode;
 export interface Collector { code:SourceCode;fetchList(page:number,size:number):Promise<{records:Record<string,unknown>[];total:number}>;fetchDetail(record:Record<string,unknown>):Promise<Record<string,unknown>>;toRaw(record:Record<string,unknown>):Record<string,unknown> }
 export class CollectionError extends Error {constructor(public code:string,public retryable=false){super(code);}}

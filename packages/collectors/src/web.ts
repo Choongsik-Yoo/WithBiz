@@ -2,6 +2,7 @@ import {createHash} from 'node:crypto';
 import {load,type CheerioAPI} from 'cheerio';
 import type {Collector} from './index';
 export const WEB_SOURCES={
+ sba:{name:'서울경제진흥원',url:'https://www.sba.seoul.kr/Pages/BusinessApply/Posting.aspx',category:'business',field:'경영'},
  ntis:{name:'NTIS 국가R&D',url:'https://www.ntis.go.kr/rndgate/eg/un/ra/mng.do',category:'rnd',field:'기술'},
  smtech:{name:'중소기업기술정보진흥원',url:'https://www.smtech.go.kr/front/main/main.do',category:'rnd',field:'기술'},
  nipa:{name:'정보통신산업진흥원',url:'https://www.nipa.kr/home/2-2',category:'business',field:'기술'},
@@ -21,6 +22,7 @@ export class WebCollectionError extends Error{constructor(public code:string){su
 async function request(url:string,options?:RequestInit):Promise<string>{
  const u=new URL(url);if(u.protocol!=='https:'||u.username||u.password)throw new WebCollectionError('UNSAFE_SOURCE_URL');
  const allowedHosts=['ntis.go.kr','smtech.go.kr','nipa.kr','kocca.kr','creativekorea.or.kr','technopark.or.kr','jointips.or.kr','kvic.or.kr','semas.or.kr','sbiz24.kr','btp.or.kr','dgtp.or.kr','gntp.or.kr','ctp.or.kr','gtp.or.kr','gjtp.or.kr','itp.or.kr','djtp.or.kr','utp.or.kr','sjtp.or.kr','gwtp.or.kr','cbtp.or.kr','jbtp.or.kr','jntp.or.kr','gbtp.or.kr','jejutp.or.kr','ptp.or.kr','gdtp.or.kr','wtp.or.kr'];
+ allowedHosts.push('sba.seoul.kr');
  if(!allowedHosts.some(host=>u.hostname===host||u.hostname.endsWith('.'+host)))throw new WebCollectionError('UNVERIFIED_SOURCE_HOST');
  for(let n=0;n<3;n++){try{const r=await fetch(u,{...options,headers:{'User-Agent':'WithBizAI/0.1 (+https://github.com/Choongsik-Yoo/WithBiz)',...options?.headers},signal:AbortSignal.timeout(20000)});if(!r.ok){if((r.status===429||r.status>=500)&&n<2){await new Promise(x=>setTimeout(x,1000*(n+1)));continue;}throw new WebCollectionError('HTTP_'+r.status);}const bytes=await r.arrayBuffer();if(bytes.byteLength>8_000_000)throw new WebCollectionError('PAGE_TOO_LARGE');return new TextDecoder(/charset\s*=\s*euc-kr/i.test(r.headers.get('content-type')??'')?'euc-kr':'utf8').decode(bytes);}catch(e){if(e instanceof WebCollectionError)throw e;if(n===2)throw new WebCollectionError('NETWORK_OR_TIMEOUT');await pause();}}
  throw new WebCollectionError('FETCH_FAILED');
@@ -29,6 +31,14 @@ function httpsUrl(value:string,base:string):string|null{try{const u=new URL(valu
 function add(rows:Link[],entry:Link){if(entry.title.length>5&&entry.title.length<1000&&!rows.some(r=>r.id===entry.id))rows.push(entry);}
 export function parseWebList(code:WebSourceCode,html:string):Link[]{
  const config=WEB_SOURCES[code],$=load(html),rows:Link[]=[];
+ if(code==='sba'){
+  // ASP.NET nested tables: read the outer announcement row, not the title's inner tr.
+  $('tr.grid_list').each((_,e)=>{const row=$(e),id=row.find('input[id*="_new_displayId_"]').attr('value')??'';
+   if(!/^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i.test(id))return;
+   const start=text(row.find('[id*="_lb_receipt_start_"]').text()),end=text(row.find('[id*="_lb_receipt_end_"]').text());
+   add(rows,{id:id.toLowerCase(),title:text(row.find('a.posting').text()),url:`https://www.sba.seoul.kr/Pages/BusinessApply/PostingDetail.aspx?p=0&mid=${id.toLowerCase()}`,period:`${start} ~ ${end}`});
+  });return rows;
+ }
  if(code==='tips'){
   const match=html.match(/window\.CmsBoardRuntime\.mount\(document\.getElementById\('[^']+'\),(\{[\s\S]*?\})\);<\/script>/);if(!match)throw new WebCollectionError('INVALID_TIPS_SCHEMA');const embedded=load(JSON.parse(match[1]).html);
   embedded('[data-post-id][data-bbs-id="1321"], [data-post-id][data-bbs-id="1301"]').each((_,e)=>{const a=embedded(e),id=a.attr('data-post-id')!,bbs=a.attr('data-bbs-id')!;add(rows,{id,title:text(a.find('.news-row-title').text()),url:`${config.url}?postId=${id}&bbsId=${bbs}`,created:text(a.find('.news-row-date').text()),api:`https://jointips.or.kr/api/cms/bbs/${bbs}/board/public/${id}`});});return rows;
@@ -51,6 +61,14 @@ function content($:CheerioAPI):string{
  for(const selector of ['.board_cont','.board-view-content','.board-view','.boardView','.view_cont','.bbs_view','#subcontent','#contents','.contents','.content','main','body']){const n=$(selector).first();if(n.text().trim().length>80)return text(n.text()).slice(0,45000);}
  return '';
 }
+export function parseSbaDetail(html:string,url:string){
+ const $=load(html),body=$('#new_ntxt_description');body.find('script,style,iframe').remove();
+ body.find('img[alt]').each((_,e)=>{const alt=text($(e).attr('alt')??'');if(alt.length>20)$(e).replaceWith($('<p>').text('[공식 이미지 대체 텍스트] '+alt));});
+ const description=text(body.text()).slice(0,45000);
+ const start=text($('#new_dt_receipt_start').text()),end=text($('#new_dt_receipt_end').text());
+ const attachments=$('a[id^="new_txt_fileupload_"][href]').map((_,e)=>({name:text($(e).text()),url:httpsUrl($(e).attr('href')??'',url)??''})).get().filter(x=>x.name&&/^https:\/\/smc\.sba\.kr\/AttachFiles\//i.test(x.url)).slice(0,12);
+ return {summary:description.length>=30?description:text($('#new_name').text())+'\n상세 원문 확인 필요: 본문이 이미지 또는 첨부문서로 제공됩니다. 지원조건과 마감 시각은 공식 원문·첨부파일을 확인하세요.',period:start&&end?`${start} ~ ${end}`:'',attachments,detailState:description.length>=30?'complete':'official_detail_metadata'};
+}
 export function createWebCollector(code:WebSourceCode):Collector{
  const config=WEB_SOURCES[code];return {code,fetchDetail:async r=>r,toRaw:r=>r,async fetchList(page,size){
   // Latest official listing per source; bounded crawl never recursively follows arbitrary URLs.
@@ -62,7 +80,7 @@ export function createWebCollector(code:WebSourceCode):Collector{
    // SEMAS publishes the official Sbiz24 announcement index; no private or protected endpoint is used.
    if(code==='sbiz24'||code==='semas'){summary=link.title+'\n소상공인시장진흥공단 공식 홈페이지에 게시된 소상공인24 연계 공고입니다. 상세 지원내용과 접수기간은 원문에서 확인하세요.';detailState='official_index';}
    else try{if(link.api){const j=JSON.parse(await request(link.api));if(j.code!==200||j.data?.secretYn==='Y')throw new WebCollectionError('PRIVATE_OR_INVALID_POST');summary=content(load(j.data.contents??''));link.created=j.data.regdate?.slice(0,10);}
-    else{const html=await request(link.url),$=load(html);summary=content($);attachments=$('a[href]').map((_,e)=>({name:text($(e).text()),url:httpsUrl($(e).attr('href')??'',link.url)??''})).get().filter(x=>x.name&&x.url&&/\.pdf|\.hwp|\.zip|다운로드|첨부파일/.test(x.name+' '+x.url)).slice(0,12);}
+    else{const html=await request(link.url),$=load(html);if(code==='sba'){const detail=parseSbaDetail(html,link.url);summary=detail.summary;attachments=detail.attachments;detailState=detail.detailState;if(detail.period)period=detail.period;}else{summary=content($);attachments=$('a[href]').map((_,e)=>({name:text($(e).text()),url:httpsUrl($(e).attr('href')??'',link.url)??''})).get().filter(x=>x.name&&x.url&&/\.pdf|\.hwp|\.zip|다운로드|첨부파일/.test(x.name+' '+x.url)).slice(0,12);}}
     if(!summary||summary.length<30)throw new WebCollectionError('EMPTY_DETAIL');
    }catch(e){detailState=e instanceof WebCollectionError?e.code:'DETAIL_FAILED';summary=link.title+'\n공식 목록에서 수집했습니다. 상세 본문을 불러오지 못해 지원내용과 접수기간은 원문 확인이 필요합니다.';}
    if(!period)period=summary.match(/(?:신청기간|접수기간|접수일|신청접수)[\s:：]{0,10}(20\d{2}[\s\S]{0,120})/)?.[1]??'';
